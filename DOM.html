@@ -20,5 +20,13 @@
   }
   addlanguageName("React");
   addlanguageName("Java");
+
+   function addlanguageNameOptimised (langName){
+    const li = document.createElement("li");
+    li.appendChild(document.createTextNode(langName));
+    document.querySelector('.language').
+    appendChild(li);
+  }
+  addlanguageNameOptimised ("golang")
 </script>
 </html>
