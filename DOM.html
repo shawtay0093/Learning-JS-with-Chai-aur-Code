@@ -27,6 +27,20 @@
     document.querySelector('.language').
     appendChild(li);
   }
-  addlanguageNameOptimised ("golang")
+  addlanguageNameOptimised ("golang");
+
+  //edit----
+
+  const secondLang = document.querySelector("li:nth-child(2)")
+  const newLi= document.createElement('li')
+  newLi.textContent= "xyz"
+  secondLang.replaceWith(newLi)
+  //// edit---
+  const firstLang = document.querySelector('li:first-child')
+  firstLang.outerHTML = '<li>TypeScript</li>'
+
+  //remove----
+  const lastLang = document.querySelector('li:last-child')
+  lastLang.remove()
 </script>
 </html>
