@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learning DOM | Chai aur Code</title>
+</head>
+<body>
+  <ul class="language" style="background-color: #212121; color: white;">
+    <li>JavaScript</li>
+    <li>Html</li>
+  </ul>
+</body>
+<script>
+  function addlanguageName (langName){
+    const li = document.createElement("li");
+    li.innerHTML = `${langName}`;
+    document.querySelector('.language').
+    appendChild(li);
+  }
+  addlanguageName("React");
+  addlanguageName("Java");
+</script>
+</html>
