@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learning DOM | 31/51 Lesson</title>
+  <style>
+    .bg-black{
+      background: #212121;
+      color: white;
+    }
+  </style>
+</head>
+<body class="bg-black">
+  <div >
+    <h1 id="title" class="heading"> DOM learning on Chai aur code <span style="display: none;">Test Text</span></h1>
+    <h2>Lorem ipsum dolor sit.</h2>
+    <h2>Lorem ipsum dolor sit.</h2>
+    <h2>Lorem ipsum dolor sit.</h2>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <input type="password">
+    <ul>
+      <li class="list-item">one</li>
+      <li class="list-item">two</li>
+      <li class="list-item">three</li>
+      <li class="list-item">four</li>
+    </ul>
+  </div>
+
+
+  <script>
+    const x = document.getElementById('title')// we are fetching an html code from using id of that element
+    console.log(x)
+    const y = x.getAttribute('class')// its a func and takes a param, like 'class' in this case 
+    console.log(y);
+    x.setAttribute('className' , 'test heading')// while setAttribute we write className and not just class.
+    console.log(x);
+    // now styling the title from here
+    x.style.backgroundColor = '#ffbb93'// we are dong html and css through here, using dom!!
+    x.style.padding = '15px'
+    x.style.borderRadius = '25px'
+    // now learning adding content, timestamp - 11.32
+    let tc = x.textContent
+    console.log(tc)
+    let innText = x.innerText
+    console.log(innText)
+    let innHTML = x.innerHTML
+    console.log(innHTML)
+    //Observe the diff b/w upper three-
+    //innerHTML gives all text and html inside
+    //innerText gives just the text and not hidden text like display none
+    // textContent gives all the text content, visible and hidden both
+    //===========================
+
+     console.log(document.querySelector('h2'));
+     console.log(document.querySelector('#title'));
+     console.log(document.querySelector('.heading'));
+     console.log(document.querySelector('input [ type = "password"]'));
+     console.log("mistake happened with input above is i left spaces so it returns null. ")
+     // correct way is-
+     console.log(document.querySelector('input[type="password"]'));
+     //=====
+     document.querySelector('ul').querySelector('li').style="color:pink"
+     
+   // Point- array, nodelist, html collection all are different, 
+   // always check prototype and it will tell what can we apply on what like on nidelist, prototype has forEach but not maps, so we cant apply 
+   // maps to nodelist.
+     document.querySelector('ul li:first-child').style.color="pink"
+     document.querySelector('ul li:nth-child(2)').style.color = "blue";
+
+  //========================
+  // while using querySelectorAll, it returns a NODELIST, and cant directly style it
+  // So we got to specify which child we want to put style on, ex- below
+  document.querySelectorAll('h1')[0].style.color = 'purple'
+  // document.querySelector('h1').style.color = 'purple';
+  // // OR, to be explicit:
+  // document.querySelector('h1:first-of-type').style.color = 'purple';
+
+    const tempList = document.querySelectorAll('li')// this returns a nodeList unlike normal querySelector
+    console.log(tempList)
+    tempList.forEach(function (l){
+      l.style.backgroundColor = 'brown'
+    })
+
+  //====================
+  console.log(document.getElementsByClassName('list-item'))// It will return HTML Collection
+  // HTML Collection pr looping nhi ho skti toh arr me convert karte hai
+  console.log(Array.from(document.getElementsByClassName('list-item'))// we can see html colletn converted int array, 
+  // now you  may hold it in some var and do whaever required
+)
+    
+    
+    
+
+  </script>
+</body>
+
+
+</html>
