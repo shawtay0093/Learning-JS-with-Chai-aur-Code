@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM | Create Element | 33/51</title>
+</head>
+<body style="background-color: #212121; color: burlywood;">
+  <div class="parent"> 
+    <!-- has taken ex of week as parents  -->
+    <div class="day">Monday</div>
+    <div class="day">Tuesday</div>
+    <div class="day">Wednesday</div>
+    <div class="day">Thursday</div>
+  </div>
+
+  <script>
+    const parent = document.querySelector('.parent')
+    // //  selects whole div of parent class and store in parent var
+    // console.log(document.querySelector('.parent').children)
+    // // selects just children of parent (here days of weeks) in an HTML Collection
+    // console.log(document.querySelector('.parent').children[0])
+    // // selects parent->children->[nth] child (here monday in this case)
+    for(let i = 0; i < parent.children.length ; i++){
+      console.log(parent.children[i].innerHTML)
+    }// parent.children gives an html collection and .length retunrs the elemnt of it like an array
+
+    //styling the child---------
+    parent.children[1].style.color = 'red'
+    parent.children[3].style.color = 'red'
+
+    //----- NEW Properties
+    console.log(parent.firstElementChild)
+    console.log(parent.lastElementChild)
+    // this way we are accessing first / last child of a parent without having to use any other selector
+    // since qs is kind of expensive in terms of computation
+
+    // === similar way we can access a parent through child-
+    // let's store first child like-
+    const dayOne = document.querySelector('.day')
+    console.log(dayOne)
+    console.log(dayOne.parentElement)// will return whole parent element
+
+    // same way we can access sibling element
+    console.log(dayOne.nextElementSibling)
+
+    // we can count nodes by----
+    console.log("NODES ", parent.childNodes)// this will return a nodelist of nodes
+    // it is very imp since it is used alot 
+
+    
+
+  </script>
+</body>
+</html>
